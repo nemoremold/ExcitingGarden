@@ -1,0 +1,55 @@
+//
+//  DefaultPlantTypes.swift
+//  Excited
+//
+//  Created by Emoin Lam on 18/04/2017.
+//  Copyright © 2017 Emoin Lam. All rights reserved.
+//
+
+import UIKit
+import os.log
+
+class DefaultPlantTypes {
+    // MARK: Properties
+    private var _defaultPlantNames = [String]()
+    private var _defaultPlantImages = [UIImage]()
+    private var _defaultPlantTypes = [PlantType]()
+    private var _typesCount: Int
+    
+    init() {
+        _typesCount = 0
+        
+        loadSamples()
+    }
+    
+    // MARK: Public Methods
+    func countPlantTypes() -> Int {
+        return _typesCount
+    }
+    
+    func getDefaultPlantNameByID(id: Int) -> String {
+        return _defaultPlantNames[id]
+    }
+    
+    func getDefaultPlantImageByID(id: Int) -> UIImage {
+        return _defaultPlantImages[id]
+    }
+    
+    func getDefaultPlantTypeByID(id: Int) -> PlantType {
+        return _defaultPlantTypes[id]
+    }
+    
+    // MARK: Private Methods
+    private func loadSamples() {
+        for index in 0 ..< 3 {
+            addDefaultPlant(name: "AppleFlower\(index)", image: #imageLiteral(resourceName: "defaultImage"), type: .AppleFlower)
+        }
+    }
+    
+    private func addDefaultPlant(name: String, image: UIImage, type: PlantType) {
+        _defaultPlantTypes += [type]
+        _defaultPlantImages += [image]
+        _defaultPlantNames += [name]
+        _typesCount += 1
+    }
+}
