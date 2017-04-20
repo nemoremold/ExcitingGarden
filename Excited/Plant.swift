@@ -95,7 +95,8 @@ class PlantStatus {
     - addSchedule(schedule: Schedule) inserts a non-nil Schedule object into the _schedules array. If the insertion succeeds the function will return with true, else it returns with false
     - deleteSchedule(id: Int) will change _schedulesHash array element with index id to false, indicating that this schedule is deleted and this index of the _schedules array is able to be reused
     - sortSchedules() will sort the _schedulesSort array. it will be sorted by the time of schedules in _schedules array from nearest task to the further most task
-    - getSortedScheduleIDByRank(id: Int) get the (id)st nearest task. The return type is Int
+    - getSortedScheduleIDByRank(id: Int) get the (id)st nearest task. The return type is Int, representing its SIDVice
+    - deleteAllSchedules() returns an array with Integers indicating the deleted schedules' SIDPrime(Prime Schedule ID), representing their index in plantManager.schedules array
 */
 class Plant {
     // MARK: Properties
