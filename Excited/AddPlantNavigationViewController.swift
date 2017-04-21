@@ -9,6 +9,7 @@
 import UIKit
 import os.log
 
+// Used for global data transferring as alternative to segue data passing
 class PassNewType {
     static private var newType: PlantType?
     /*

@@ -8,6 +8,10 @@
 
 import UIKit
 
+/*
+ NewPlantTableViewCell Functionalities
+    - Set reused cell for plant types display
+*/
 class NewPlantTableViewCell: UITableViewCell {
     // MARK: Properties
     @IBOutlet weak var PlantName: UILabel!

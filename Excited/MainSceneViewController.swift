@@ -8,6 +8,11 @@
 
 import UIKit
 
+/*
+ MainSceneViewController Functionalities
+    - Manages the main view presenting information of a certain plant
+    - Manages the data passing between related views
+*/
 class MainSceneViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: Properties
@@ -73,6 +78,7 @@ class MainSceneViewController: UIViewController, UITableViewDelegate, UITableVie
         SubviewController.bringSubview(toFront: PrivateSchedule)
     }
     
+    // Get the data from plant adding views
     @IBAction func unwindToMainScene(sender: UIStoryboardSegue) {
         guard let sourceViewController = sender.source as? AddPlantViewController else {
             return
@@ -158,6 +164,7 @@ class MainSceneViewController: UIViewController, UITableViewDelegate, UITableVie
         //PrivateSchedule.insertRows(at: [newIndexPath], with: .automatic)
     }
     
+    // Every time the schedules are changed, rearrange the cells
     private func rearrange() {
         let countRows = PrivateSchedule.numberOfRows(inSection: 0)
         let newRowsCount = displayedPlant.countSchedules()
@@ -184,6 +191,7 @@ class MainSceneViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     // MARK: Navigation
+    // When a segue is to be carried out, the method is invoked
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
