@@ -22,18 +22,22 @@ class MainSceneViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var SubviewController: UIView!
     @IBOutlet weak var PlantDisplayer: UIView!
     @IBOutlet weak var PrivateSchedule: UITableView!
+    var leftViewController: LeftTableViewController?
     
     private var plantManager = PlantManager()
     private var displayedPlantID = Int(0)
     private var displayedPlant = Plant(name: "Default", ID: -1, plantType: .Default)
+    var speed_f:double_t?//滑动的速度
+    var condition_f:CGFloat?
+    let screenW = UIScreen.main.bounds.width
+    var maxWidth: CGFloat = 300
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
         self.PrivateSchedule.delegate = self
         self.PrivateSchedule.dataSource = self
+        speed_f = 0.25
         //PrivateSchedule.deleteSections([0], with: .none)
         /*
         let countRows = PrivateSchedule.numberOfRows(inSection: 0)
@@ -48,6 +52,17 @@ class MainSceneViewController: UIViewController, UITableViewDelegate, UITableVie
             loadSamples()
         }
         //print("VIEWDIDLOAD PLACE")
+        self.leftViewController = LeftTableViewController()
+        self.view.addSubview((self.leftViewController?.view)!)
+        //将抽屉视图隐藏掉
+        self.leftViewController?.view.isHidden = true
+        //self.mainViewController?.view.isHidden = true
+        
+        //添加屏幕边缘手势
+        let pan = UIScreenEdgePanGestureRecognizer(target:self, action:#selector(edgPanGesture(_:)))
+        pan.edges = UIRectEdge.left //从左边缘开始滑动
+        self.view.addGestureRecognizer(pan)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -207,6 +222,115 @@ class MainSceneViewController: UIViewController, UITableViewDelegate, UITableVie
             print("Default")
         }
     }
+    
+    //滑动手势
+    @objc private func edgPanGesture(_ pan:UIScreenEdgePanGestureRecognizer){
+        //print("left edgeswipe ok")
+        self.leftViewController?.view.isHidden = false
+        
+        //手指触摸的x位置
+        let offsetX = pan.translation(in: pan.view).x
+        //限制视图的变化范围是宽度的0.75
+        maxWidth = screenW * 0.75
+        
+        //把抽屉栏放在主视图左边，设置主视图中心为视角
+        leftViewController?.view.transform =  CGAffineTransform(translationX: -self.screenW, y: 0)
+        
+        if pan.state == UIGestureRecognizerState.changed && offsetX <= maxWidth {
+            //主视图向右移动
+            self.view.transform = CGAffineTransform(translationX: max(offsetX, 0), y: 0)
+        }
+        else if pan.state == UIGestureRecognizerState.ended
+            || pan.state == UIGestureRecognizerState.cancelled
+            || pan.state == UIGestureRecognizerState.failed {
+            
+            //移动大于屏幕宽度的0.35，打开侧边栏
+            if offsetX > screenW * 0.35 {
+                
+                openLeftMenu()
+                
+            } else {//不然就关闭侧边栏
+                
+                closeLeftMenu()
+            }
+        }
+        //*/
+    }
+    //打开左侧菜单
+    private func openLeftMenu() {
+        
+        //限制视图的变化范围是宽度的0.75
+        maxWidth = screenW * 0.75
+        
+        UIView.animate(withDuration: self.speed_f!, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: {
+            
+            self.view.transform = CGAffineTransform(translationX: self.maxWidth, y: 0)
+            
+            
+        }, completion: {
+            
+            (finish: Bool) -> () in
+            
+            self.view.addSubview(self.coverBtn)
+            
+        })
+    }
+    
+    //关闭左侧菜单
+    @objc private func closeLeftMenu() {
+        
+        UIView.animate(withDuration: self.speed_f!, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: {
+            
+            //self.leftViewController?.view.transform = CGAffineTransform(translationX: -self.screenW, y: 0)
+            self.view.transform = CGAffineTransform.identity
+            
+        }, completion: {
+            
+            (finish: Bool) -> () in
+            
+            self.coverBtn.removeFromSuperview()
+            
+        })
+    }
+    //灰色背景按钮
+    private lazy var coverBtn: UIButton = {
+        
+        let btn = UIButton(frame: (self.view.bounds))
+        btn.backgroundColor = UIColor.clear
+        btn.addTarget(self, action: #selector(closeLeftMenu), for: .touchUpInside)
+        btn.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(panCloseLeftMenu(_:))))
+        
+        return btn
+        
+    }()
+    //遮盖按钮手势
+    @objc private func panCloseLeftMenu(_ pan: UIPanGestureRecognizer) {
+        
+        let offsetX = pan.translation(in: pan.view).x
+        if offsetX > 0 {return}
+        
+        if pan.state == UIGestureRecognizerState.changed && offsetX >= -maxWidth {
+            
+            let distace = maxWidth + offsetX
+            
+            self.view.transform = CGAffineTransform(translationX: distace, y: 0)
+            leftViewController?.view.transform = CGAffineTransform(translationX: offsetX, y: 0)
+            
+        } else if pan.state == UIGestureRecognizerState.ended || pan.state == UIGestureRecognizerState.cancelled || pan.state == UIGestureRecognizerState.failed {
+            
+            if offsetX > screenW * 0.35 {
+                
+                openLeftMenu()
+                
+            } else {
+                
+                closeLeftMenu()
+            }
+            
+        }
+        
+    }
+
 
 }
-
+    
