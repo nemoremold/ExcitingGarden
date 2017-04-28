@@ -13,6 +13,12 @@ let DEFAULT_STARTER = 0
 let DEFAULT_END = 1
 let ERROR_MARK = -1
 
+/*
+ PlantManager Functionalities
+    - The overall manager of all plants and schedules
+    - Stores all the information of plants and their schedules
+    - Arranges overall schedules
+*/
 class PlantManager {
     // MARK: Properties
     private var plants = [Plant]()

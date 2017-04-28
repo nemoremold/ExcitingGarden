@@ -13,6 +13,10 @@ let MONTH_TRANSFER = 100
 let YEAR_TRANSFER = 10000
 let HOUR_TRANSFER = 100
 
+/*
+ Time is a manually defined type for time recording
+ comparison operators are overloaded for Time type object comparison
+*/
 struct Time {
     
     // MARK: Properties
@@ -79,12 +83,29 @@ func ==(left: Time, right: Time) -> Bool {
     }
 }
 
-
+/*
+ Task Functionalities
+ - presents the type of a task
+ - it is an enum type
+ 
+ Task Properties
+ - use .(typename) to represent a plant needs a certain type of operating
+ */
 enum Task {
     case Watering
     case Illuminating
 }
 
+/*
+ Schedule Functionalities
+    - stores information of a schedule
+    - contains the information of its belonging and its carrying-out time and task
+ 
+ Schedule Properties
+    - _PID stores the index of the plant it belongs to at in the plantManager.plants array
+    - _SIDPrime stores the index it is at in the plantManager.schedules array, representing its place in total scheduling
+    - _SIDVice stores the index it is at in the plant._schedules array, representing its place in private scheduling
+*/
 class Schedule {
     
     // MARK: Properties

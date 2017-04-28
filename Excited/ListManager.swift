@@ -11,7 +11,15 @@ import os.log
 
 let DEFAULT_INCREMENT = 1
 
-
+/*
+ ListManager Functionalities
+    - helps managing an array by using the technique of linked list
+    - initialized with (DEFAULT_STARTER, DEFAULT_END)
+ 
+ ListMangaer Methods
+    - getNextIndex() returns with an Integer, indicating the best place to insert into an array
+    - deleteIndex(index: Int) returns with a ListManager object used to modify the current ListManager, indicating that array index marked as (index) is added to the linked list for adding new element
+*/
 class ListManager {
     var _next: ListManager?
     var _ID: Int

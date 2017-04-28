@@ -9,6 +9,13 @@
 import UIKit
 import os.log
 
+/*
+ DefaultPlantTypes Functionalities
+    - Stores the preset types of plants for adding
+    - The content is determined by plant database which is now unaccessible
+    - Used in PlantListTableViewController
+    - Change the content by implementing loadSamples() function
+*/
 class DefaultPlantTypes {
     // MARK: Properties
     private var _defaultPlantNames = [String]()

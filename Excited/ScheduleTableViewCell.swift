@@ -8,6 +8,10 @@
 
 import UIKit
 
+/*
+ ScheduleTableViewCell Functionalities
+    - Set reused cell for schedule display
+*/
 class ScheduleTableViewCell: UITableViewCell {
     // MARK: Properties
     @IBOutlet weak var PlantName: UILabel!
