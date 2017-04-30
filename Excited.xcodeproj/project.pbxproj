@@ -20,6 +20,7 @@
 		BB3DF6A61E8E82F100F0A8BC /* AddPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3DF6A51E8E82F100F0A8BC /* AddPlantViewController.swift */; };
 		BB3DF6AA1E8E841900F0A8BC /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3DF6A91E8E841900F0A8BC /* ScheduleTableViewCell.swift */; };
 		BB3DF6AC1E8E84FA00F0A8BC /* NewPlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3DF6AB1E8E84FA00F0A8BC /* NewPlantTableViewCell.swift */; };
+		BB680E991EAB3F6B00663685 /* PlantDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB680E981EAB3F6B00663685 /* PlantDisplay.swift */; };
 		BBC019B51E8BEB8500918217 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC019B41E8BEB8500918217 /* AppDelegate.swift */; };
 		BBC019B71E8BEB8500918217 /* MainSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC019B61E8BEB8500918217 /* MainSceneViewController.swift */; };
 		BBC019BA1E8BEB8500918217 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBC019B81E8BEB8500918217 /* Main.storyboard */; };
@@ -60,6 +61,7 @@
 		BB3DF6A51E8E82F100F0A8BC /* AddPlantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlantViewController.swift; sourceTree = "<group>"; };
 		BB3DF6A91E8E841900F0A8BC /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		BB3DF6AB1E8E84FA00F0A8BC /* NewPlantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPlantTableViewCell.swift; sourceTree = "<group>"; };
+		BB680E981EAB3F6B00663685 /* PlantDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantDisplay.swift; sourceTree = "<group>"; };
 		BBC019B11E8BEB8500918217 /* Excited.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Excited.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBC019B41E8BEB8500918217 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBC019B61E8BEB8500918217 /* MainSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				BB0DFDEE1EA1F8380002F2B9 /* PlantManager.swift */,
 				BB0DFDF21EA60A7F0002F2B9 /* DefaultPlantTypes.swift */,
 				BB3DF6A91E8E841900F0A8BC /* ScheduleTableViewCell.swift */,
+				BB680E981EAB3F6B00663685 /* PlantDisplay.swift */,
 				BB3DF6AB1E8E84FA00F0A8BC /* NewPlantTableViewCell.swift */,
 				BBC019B61E8BEB8500918217 /* MainSceneViewController.swift */,
 				BB3DF6A11E8E734A00F0A8BC /* OverallSchedule.swift */,
@@ -299,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB680E991EAB3F6B00663685 /* PlantDisplay.swift in Sources */,
 				BB0DFDEF1EA1F8380002F2B9 /* PlantManager.swift in Sources */,
 				BB3DF6A61E8E82F100F0A8BC /* AddPlantViewController.swift in Sources */,
 				BB3DF6AA1E8E841900F0A8BC /* ScheduleTableViewCell.swift in Sources */,

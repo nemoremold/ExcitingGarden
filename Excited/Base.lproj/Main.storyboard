@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vAN-9i-6AG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vAN-9i-6AG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -68,7 +68,7 @@
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
-                                    <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AGg-LL-dzn">
+                                    <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AGg-LL-dzn" customClass="PlantDisplay" customModule="Excited" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="305" height="603"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -77,19 +77,12 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5qR-2E-y6A">
-                                                <rect key="frame" x="0.0" y="8" width="305" height="100"/>
+                                                <rect key="frame" x="0.0" y="8" width="305" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rWx-mc-Qbu">
                                                         <rect key="frame" x="0.0" y="0.0" width="305" height="50"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rWx-mc-Qbu" id="hGm-EX-jHf">
-                                                            <rect key="frame" x="0.0" y="0.0" width="305" height="49.5"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                        </tableViewCellContentView>
-                                                    </tableViewCell>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" translatesAutoresizingMaskIntoConstraints="NO" id="fqm-CB-ODb">
-                                                        <rect key="frame" x="0.0" y="50" width="305" height="50"/>
-                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fqm-CB-ODb" id="5Z0-c3-JXt">
                                                             <rect key="frame" x="0.0" y="0.0" width="305" height="49.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </tableViewCellContentView>
@@ -154,7 +147,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="PlantDisplayer" destination="AGg-LL-dzn" id="Adu-h1-1Nz"/>
+                        <outlet property="PlantDisplayer" destination="AGg-LL-dzn" id="bQy-dP-39n"/>
                         <outlet property="PrivateSchedule" destination="Dlb-8j-Uhs" id="2j1-fl-cOV"/>
                         <outlet property="ShowInteraction" destination="e1f-TU-uPQ" id="nam-jj-UZ8"/>
                         <outlet property="ShowPlant" destination="EBd-zU-eHD" id="L2m-nW-oh2"/>

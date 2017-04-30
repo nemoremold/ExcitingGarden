@@ -20,9 +20,10 @@ class MainSceneViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var ShowPrivateSchedule: UIButton!
     @IBOutlet weak var ShowInteraction: UIButton!
     @IBOutlet weak var SubviewController: UIView!
-    @IBOutlet weak var PlantDisplayer: UIView!
+    @IBOutlet weak var PlantDisplayer: PlantDisplay!
     @IBOutlet weak var PrivateSchedule: UITableView!
     
+    private var defaultPlants = DefaultPlantTypes()
     private var plantManager = PlantManager()
     private var displayedPlantID = Int(0)
     private var displayedPlant = Plant(name: "Default", ID: -1, plantType: .Default)

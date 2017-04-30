@@ -46,6 +46,15 @@ class DefaultPlantTypes {
         return _defaultPlantTypes[id]
     }
     
+    func getDefaultPlantIDByType(type: PlantType) -> Int {
+        for index in 0 ..< _typesCount {
+            if _defaultPlantTypes[index] == type {
+                return index
+            }
+        }
+        return -1
+    }
+    
     // MARK: Private Methods
     private func loadSamples() {
         for index in 0 ..< 3 {
