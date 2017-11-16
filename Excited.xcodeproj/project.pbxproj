@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BBA02BA1EB35AAC000E4B3A /* LeftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA02B91EB35AAC000E4B3A /* LeftTableViewController.swift */; };
+		4BBA02BD1EB35AF7000E4B3A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBA02BC1EB35AF7000E4B3A /* MapKit.framework */; };
+		4BBA02BF1EB35DB3000E4B3A /*  SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA02BE1EB35DB3000E4B3A /*  SwiftyJSON.swift */; };
 		BB0DFDEB1EA1EA250002F2B9 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0DFDEA1EA1EA250002F2B9 /* Schedule.swift */; };
 		BB0DFDED1EA1EEE20002F2B9 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0DFDEC1EA1EEE20002F2B9 /* Plant.swift */; };
 		BB0DFDEF1EA1F8380002F2B9 /* PlantManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0DFDEE1EA1F8380002F2B9 /* PlantManager.swift */; };
@@ -20,7 +23,6 @@
 		BB3DF6A61E8E82F100F0A8BC /* AddPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3DF6A51E8E82F100F0A8BC /* AddPlantViewController.swift */; };
 		BB3DF6AA1E8E841900F0A8BC /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3DF6A91E8E841900F0A8BC /* ScheduleTableViewCell.swift */; };
 		BB3DF6AC1E8E84FA00F0A8BC /* NewPlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3DF6AB1E8E84FA00F0A8BC /* NewPlantTableViewCell.swift */; };
-		BB680E991EAB3F6B00663685 /* PlantDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB680E981EAB3F6B00663685 /* PlantDisplay.swift */; };
 		BBC019B51E8BEB8500918217 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC019B41E8BEB8500918217 /* AppDelegate.swift */; };
 		BBC019B71E8BEB8500918217 /* MainSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC019B61E8BEB8500918217 /* MainSceneViewController.swift */; };
 		BBC019BA1E8BEB8500918217 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBC019B81E8BEB8500918217 /* Main.storyboard */; };
@@ -48,6 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4BBA02B91EB35AAC000E4B3A /* LeftTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftTableViewController.swift; sourceTree = "<group>"; };
+		4BBA02BC1EB35AF7000E4B3A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4BBA02BE1EB35DB3000E4B3A /*  SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = " SwiftyJSON.swift"; sourceTree = "<group>"; };
 		BB0DFDEA1EA1EA250002F2B9 /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		BB0DFDEC1EA1EEE20002F2B9 /* Plant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		BB0DFDEE1EA1F8380002F2B9 /* PlantManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantManager.swift; sourceTree = "<group>"; };
@@ -61,7 +66,6 @@
 		BB3DF6A51E8E82F100F0A8BC /* AddPlantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlantViewController.swift; sourceTree = "<group>"; };
 		BB3DF6A91E8E841900F0A8BC /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		BB3DF6AB1E8E84FA00F0A8BC /* NewPlantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPlantTableViewCell.swift; sourceTree = "<group>"; };
-		BB680E981EAB3F6B00663685 /* PlantDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantDisplay.swift; sourceTree = "<group>"; };
 		BBC019B11E8BEB8500918217 /* Excited.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Excited.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBC019B41E8BEB8500918217 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBC019B61E8BEB8500918217 /* MainSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BBA02BD1EB35AF7000E4B3A /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +107,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4BBA02BB1EB35AF7000E4B3A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BBA02BC1EB35AF7000E4B3A /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BBC019A81E8BEB8500918217 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +122,7 @@
 				BBC019C81E8BEB8500918217 /* ExcitedTests */,
 				BBC019D31E8BEB8500918217 /* ExcitedUITests */,
 				BBC019B21E8BEB8500918217 /* Products */,
+				4BBA02BB1EB35AF7000E4B3A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,21 +140,22 @@
 			isa = PBXGroup;
 			children = (
 				BBC019B41E8BEB8500918217 /* AppDelegate.swift */,
-				BBC019B81E8BEB8500918217 /* Main.storyboard */,
 				BB0DFDF01EA20F200002F2B9 /* ListManager.swift */,
 				BB0DFDEA1EA1EA250002F2B9 /* Schedule.swift */,
 				BB0DFDEC1EA1EEE20002F2B9 /* Plant.swift */,
 				BB0DFDEE1EA1F8380002F2B9 /* PlantManager.swift */,
 				BB0DFDF21EA60A7F0002F2B9 /* DefaultPlantTypes.swift */,
 				BB3DF6A91E8E841900F0A8BC /* ScheduleTableViewCell.swift */,
-				BB680E981EAB3F6B00663685 /* PlantDisplay.swift */,
 				BB3DF6AB1E8E84FA00F0A8BC /* NewPlantTableViewCell.swift */,
 				BBC019B61E8BEB8500918217 /* MainSceneViewController.swift */,
+				4BBA02BE1EB35DB3000E4B3A /*  SwiftyJSON.swift */,
+				4BBA02B91EB35AAC000E4B3A /* LeftTableViewController.swift */,
 				BB3DF6A11E8E734A00F0A8BC /* OverallSchedule.swift */,
 				BB3DF6A31E8E82A200F0A8BC /* SettingViewController.swift */,
 				BB0DFDF41EA624D20002F2B9 /* PlantListTableViewController.swift */,
 				BB0DFDF61EA71F0E0002F2B9 /* AddPlantNavigationViewController.swift */,
 				BB3DF6A51E8E82F100F0A8BC /* AddPlantViewController.swift */,
+				BBC019B81E8BEB8500918217 /* Main.storyboard */,
 				BBC019BB1E8BEB8500918217 /* Assets.xcassets */,
 				BBC019BD1E8BEB8500918217 /* LaunchScreen.storyboard */,
 				BBC019C01E8BEB8500918217 /* Info.plist */,
@@ -302,7 +317,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB680E991EAB3F6B00663685 /* PlantDisplay.swift in Sources */,
 				BB0DFDEF1EA1F8380002F2B9 /* PlantManager.swift in Sources */,
 				BB3DF6A61E8E82F100F0A8BC /* AddPlantViewController.swift in Sources */,
 				BB3DF6AA1E8E841900F0A8BC /* ScheduleTableViewCell.swift in Sources */,
@@ -313,7 +327,9 @@
 				BB0DFDF11EA20F200002F2B9 /* ListManager.swift in Sources */,
 				BB0DFDF71EA71F0E0002F2B9 /* AddPlantNavigationViewController.swift in Sources */,
 				BB0DFDF51EA624D20002F2B9 /* PlantListTableViewController.swift in Sources */,
+				4BBA02BA1EB35AAC000E4B3A /* LeftTableViewController.swift in Sources */,
 				BB0DFDF31EA60A7F0002F2B9 /* DefaultPlantTypes.swift in Sources */,
+				4BBA02BF1EB35DB3000E4B3A /*  SwiftyJSON.swift in Sources */,
 				BB0DFDED1EA1EEE20002F2B9 /* Plant.swift in Sources */,
 				BB3DF6A21E8E734A00F0A8BC /* OverallSchedule.swift in Sources */,
 				BB3DF6A41E8E82A200F0A8BC /* SettingViewController.swift in Sources */,

@@ -46,19 +46,10 @@ class DefaultPlantTypes {
         return _defaultPlantTypes[id]
     }
     
-    func getDefaultPlantIDByType(type: PlantType) -> Int {
-        for index in 0 ..< _typesCount {
-            if _defaultPlantTypes[index] == type {
-                return index
-            }
-        }
-        return -1
-    }
-    
     // MARK: Private Methods
     private func loadSamples() {
-        for index in 0 ..< 3 {
-            addDefaultPlant(name: "AppleFlower\(index)", image: #imageLiteral(resourceName: "defaultImage"), type: .AppleFlower)
+        for index in 0 ..< 1 {
+            addDefaultPlant(name: "AppleFlower", image: #imageLiteral(resourceName: "2"), type: .AppleFlower)
         }
     }
     

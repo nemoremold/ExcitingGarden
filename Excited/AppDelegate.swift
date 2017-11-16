@@ -16,9 +16,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        //开启通知,通知是默认开启的，反抗也没有用！！！！
+        //let settings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes: [.Badge, .Sound, .Alert], categories: nil)
+        let types: UIUserNotificationType = [.alert, .badge, .sound]
+        let settings :UIUserNotificationSettings=UIUserNotificationSettings(types: types, categories: nil);
+        application.registerUserNotificationSettings(settings)
         return true
     }
-
+    func application(application: UIApplication,
+                     didReceiveLocalNotification notification: UILocalNotification) {
+        //设定Badge数目
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        
+        let info = notification.userInfo as! [String:Int]
+        let number = info["ItemID"]
+        
+        let alertController = UIAlertController(title: "本地通知",
+                                                message: "消息内容：\(notification.alertBody)用户数据：\(number)",
+            preferredStyle: UIAlertControllerStyle.alert)
+        
+        
+        let cancel = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel, handler: nil);
+        
+        alertController.addAction(cancel);
+        
+        self.window?.rootViewController!.present(alertController,
+                                                 animated: true, completion: nil)
+    }
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

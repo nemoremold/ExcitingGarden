@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vAN-9i-6AG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vAN-9i-6AG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,6 +25,10 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="exciting garden main scene background" translatesAutoresizingMaskIntoConstraints="NO" id="WRe-HL-aDe">
+                                        <rect key="frame" x="0.0" y="-65" width="375" height="668"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                     <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dlb-8j-Uhs">
                                         <rect key="frame" x="0.0" y="0.0" width="305" height="603"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -68,76 +72,70 @@
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
-                                    <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AGg-LL-dzn" customClass="PlantDisplay" customModule="Excited" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AGg-LL-dzn">
                                         <rect key="frame" x="0.0" y="0.0" width="305" height="603"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="djx-NM-Z7b">
-                                                <rect key="frame" x="0.0" y="8" width="305" height="595"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5qR-2E-y6A">
-                                                <rect key="frame" x="0.0" y="8" width="305" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <subviews>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rWx-mc-Qbu">
-                                                        <rect key="frame" x="0.0" y="0.0" width="305" height="50"/>
-                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rWx-mc-Qbu" id="hGm-EX-jHf">
-                                                            <rect key="frame" x="0.0" y="0.0" width="305" height="49.5"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                        </tableViewCellContentView>
-                                                    </tableViewCell>
-                                                </subviews>
-                                            </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dO-sp-K7p">
-                                                <rect key="frame" x="8" y="561" width="289" height="34"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nuw-gY-DZu">
                                                 <rect key="frame" x="32" y="474" width="240" height="79"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="djx-NM-Z7b">
+                                                <rect key="frame" x="0.0" y="88" width="305" height="507"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Local" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Je-CN-1jj">
+                                                <rect key="frame" x="175" y="38" width="122" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="keyBoards:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="LVf-hN-bG7"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TemLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LwW-Qt-gI3">
+                                                <rect key="frame" x="8" y="26" width="159" height="54"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dO-sp-K7p">
+                                                <rect key="frame" x="8" y="516" width="361" height="79"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="42"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBd-zU-eHD">
+                                        <rect key="frame" x="309" y="23" width="58" height="63"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="2"/>
+                                        <connections>
+                                            <action selector="DisplayPlantInformation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TzA-O1-yAf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaD-mN-5fX">
+                                        <rect key="frame" x="309" y="94" width="57" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="3"/>
+                                        <connections>
+                                            <action selector="DisplayPrivateSchedule:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XGr-Hq-Wl9"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBd-zU-eHD">
-                                <rect key="frame" x="313" y="72" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="DisplayPlantInformation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TzA-O1-yAf"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaD-mN-5fX">
-                                <rect key="frame" x="313" y="110" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="DisplayPrivateSchedule:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XGr-Hq-Wl9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1f-TU-uPQ">
-                                <rect key="frame" x="313" y="148" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="hWy-bb-rAh" kind="show" identifier="ShowPlantList" id="nLX-AX-gvd"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="qhH-ep-0iz">
-                        <barButtonItem key="leftBarButtonItem" title="Setting" id="3gu-aW-LW2">
+                        <barButtonItem key="leftBarButtonItem" title="Add Plant" id="3gu-aW-LW2">
                             <connections>
-                                <segue destination="OOb-EK-6gX" kind="show" identifier="ShowSetting" id="ATW-Ug-5Dg"/>
+                                <segue destination="hWy-bb-rAh" kind="show" identifier="ShowPlantList" id="smc-qp-7JK"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Schedule" id="NHa-X6-XbW">
@@ -147,12 +145,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="PlantDisplayer" destination="AGg-LL-dzn" id="bQy-dP-39n"/>
+                        <outlet property="CityTextField" destination="8Je-CN-1jj" id="Rt6-Qz-aSs"/>
+                        <outlet property="PlantDisplayer" destination="AGg-LL-dzn" id="Adu-h1-1Nz"/>
+                        <outlet property="PlantName" destination="4dO-sp-K7p" id="t0m-z7-LN3"/>
                         <outlet property="PrivateSchedule" destination="Dlb-8j-Uhs" id="2j1-fl-cOV"/>
-                        <outlet property="ShowInteraction" destination="e1f-TU-uPQ" id="nam-jj-UZ8"/>
                         <outlet property="ShowPlant" destination="EBd-zU-eHD" id="L2m-nW-oh2"/>
                         <outlet property="ShowPrivateSchedule" destination="vaD-mN-5fX" id="c9n-R3-sSA"/>
                         <outlet property="SubviewController" destination="nhJ-mT-Jtz" id="FZt-Yf-tup"/>
+                        <outlet property="TempLabel" destination="LwW-Qt-gI3" id="gON-De-KhK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -219,16 +219,16 @@
         <scene sceneID="sKW-Ur-4We">
             <objects>
                 <tableViewController id="hWy-bb-rAh" customClass="PlantListTableViewController" customModule="Excited" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="128" sectionHeaderHeight="28" sectionFooterHeight="28" id="gq7-Lm-0Au">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="403" sectionHeaderHeight="28" sectionFooterHeight="28" id="gq7-Lm-0Au">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewPlantTableViewCell" rowHeight="128" id="RoR-vV-HjA" customClass="NewPlantTableViewCell" customModule="Excited" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="128"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewPlantTableViewCell" rowHeight="403" id="RoR-vV-HjA" customClass="NewPlantTableViewCell" customModule="Excited" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="403"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RoR-vV-HjA" id="rHb-Na-rvE">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="127.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="402.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDD-SX-I5e">
@@ -238,8 +238,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TtR-wX-MF4">
-                                            <rect key="frame" x="8" y="37" width="359" height="83"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="TtR-wX-MF4">
+                                            <rect key="frame" x="8" y="37" width="359" height="358"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
@@ -259,7 +259,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nXW-gH-VR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="689" y="833"/>
+            <point key="canvasLocation" x="688.79999999999995" y="832.53373313343332"/>
         </scene>
         <!--Add Plant View Controller-->
         <scene sceneID="QcP-le-bq2">
@@ -335,7 +335,7 @@
             <objects>
                 <navigationController id="vAN-9i-6AG" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vef-Os-h1T">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -352,7 +352,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hKo-Cv-bXW" customClass="AddPlantNavigationViewController" customModule="Excited" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pb2-Yo-dQ0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -365,4 +365,10 @@
             <point key="canvasLocation" x="1703" y="833"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="1" width="461" height="717"/>
+        <image name="2" width="414" height="453"/>
+        <image name="3" width="380" height="396"/>
+        <image name="exciting garden main scene background" width="540" height="960"/>
+    </resources>
 </document>

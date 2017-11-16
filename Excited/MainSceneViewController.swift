@@ -20,16 +20,16 @@ class MainSceneViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var ShowPrivateSchedule: UIButton!
     @IBOutlet weak var ShowInteraction: UIButton!
     @IBOutlet weak var SubviewController: UIView!
-    @IBOutlet weak var PlantDisplayer: PlantDisplay!
+    @IBOutlet weak var PlantDisplayer: UIView!
     @IBOutlet weak var PrivateSchedule: UITableView!
     @IBOutlet weak var CityTextField: UITextField!
     @IBOutlet weak var TempLabel: UILabel!
     @IBAction func keyBoards(_ sender: Any) {
     }
+    @IBOutlet weak var PlantName: UILabel!
     
     var leftViewController: LeftTableViewController?
     
-    private var defaultPlants = DefaultPlantTypes()
     private var plantManager = PlantManager()
     private var displayedPlantID = Int(0)
     private var displayedPlant = Plant(name: "Default", ID: -1, plantType: .Default)
@@ -40,10 +40,13 @@ class MainSceneViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        PrivateSchedule.isHidden = true;
         // Do any additional setup after loading the view, typically from a nib.
         self.PrivateSchedule.delegate = self
         self.PrivateSchedule.dataSource = self
         speed_f = 0.25
+        //发送通知消息
+        scheduleNotification(itemID: 12345);
         //PrivateSchedule.deleteSections([0], with: .none)
         /*
         let countRows = PrivateSchedule.numberOfRows(inSection: 0)
@@ -57,6 +60,7 @@ class MainSceneViewController: UIViewController, UITableViewDelegate, UITableVie
         if displayedPlant.getID() == -1 {
             loadSamples()
         }
+        PlantName.text = displayedPlant.getName();
         //print("VIEWDIDLOAD PLACE")
         self.leftViewController = LeftTableViewController()
         self.view.addSubview((self.leftViewController?.view)!)
@@ -71,8 +75,81 @@ class MainSceneViewController: UIViewController, UITableViewDelegate, UITableVie
         initLocation()
         getCurrentWeatherData();
     }
+    ///////////////////////////////推送啊啊啊啊啊///////////////////////////////////
+    func scheduleNotification(itemID:Int){
+        //如果已存在该通知消息，则先取消
+        cancelNotification(itemID: itemID)
+        
+        //创建UILocalNotification来进行本地消息通知
+        let localNotification = UILocalNotification()
+        let pushTime: Float = 06*56*60
+        let date = NSDate()
+        let dateFormatter = DateFormatter()
+        //日期格式为“时，分，秒”
+        dateFormatter.dateFormat = "HH,mm,ss"
+        //设备当前的时间（24小时制）
+        let strDate = dateFormatter.string(from: date as Date)
+        //将时、分、秒分割出来，放到一个数组
+        let dateArr = strDate.components(separatedBy: ",")
+        //统一转化成秒为单位
+        let hour = ((dateArr[0] as NSString).floatValue)*60*60
+        let minute = ((dateArr[1] as NSString).floatValue)*60
+        let second = (dateArr[2] as NSString).floatValue
+        var newPushTime = Float()
+        if hour > pushTime {
+            newPushTime = 24*60*60-(hour+minute+second)+pushTime
+        } else {
+            newPushTime = pushTime-(hour+minute+second)
+        }
+        let fireDate = NSDate(timeIntervalSinceNow: TimeInterval(newPushTime))
+        
+        //推送时间（设置为30秒以后）
+        localNotification.fireDate = NSDate(timeIntervalSinceNow: 30) as Date
+        //推送时间为每天早上7点整
+        //localNotification.fireDate = fireDate as Date
+        
+        //时区
+        localNotification.timeZone = NSTimeZone.default
+        //推送内容
+        let new1 = "该给"
+        let new2 = "浇水了"
+        //let new3 = "晒太阳了"
+        localNotification.alertBody = new1+"苹果花"+new2
+        //声音
+        localNotification.soundName = UILocalNotificationDefaultSoundName
+        //额外信息
+        localNotification.userInfo = ["ItemID":itemID]
+        localNotification.applicationIconBadgeNumber += 1;
+        localNotification.repeatInterval = NSCalendar.Unit.day
+        //添加一个字典类型的info，主要就是为了记录通知的标识，这里用存了一个key名
+        UIApplication.shared.scheduleLocalNotification(localNotification)
+    }
     
+    //取消通知消息
+    func cancelNotification(itemID:Int){
+        //通过itemID获取已有的消息推送，然后删除掉，以便重新判断
+        let existingNotification = self.notificationForThisItem(itemID: itemID) as UILocalNotification?
+        if existingNotification != nil {
+            //如果existingNotification不为nil，就取消消息推送
+            UIApplication.shared.cancelLocalNotification(existingNotification!)
+        }
+    }
+    
+    //通过遍历所有消息推送，通过itemid的对比，返回UIlocalNotification
+    func notificationForThisItem(itemID:Int)-> UILocalNotification? {
+        let allNotifications = UIApplication.shared.scheduledLocalNotifications
+        for notification in allNotifications! {
+            let info = notification.userInfo as! [String:Int]
+            let number = info["ItemID"]
+            if number != nil && number == itemID {
+                return notification as UILocalNotification
+            }
+        }
+        return nil
+    }
+////////////////////////////////////////////////////////////////////////////////
     override func viewWillAppear(_ animated: Bool) {
+        PlantName.text = displayedPlant.getName();
         //print("VIEWWILLAPPEAR PLACE")
         displayedPlant.sortSchedules()
         rearrange()
@@ -93,10 +170,12 @@ class MainSceneViewController: UIViewController, UITableViewDelegate, UITableVie
 
     // MARK: Actions
     @IBAction func DisplayPlantInformation(_ sender: UIButton) {
+        PrivateSchedule.isHidden = true;
         SubviewController.bringSubview(toFront: PlantDisplayer)
     }
     
     @IBAction func DisplayPrivateSchedule(_ sender: UIButton) {
+        PrivateSchedule.isHidden = false;
         SubviewController.bringSubview(toFront: PrivateSchedule)
     }
     
